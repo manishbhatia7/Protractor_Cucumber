@@ -20,7 +20,7 @@ exports.config = {
     multiCapabilities: [{
             browserName: 'chrome',
             shardTestFiles: true,
-            maxInstances: 2,
+            maxInstances: 1,
             chromeOptions: {
                 args: ['disable-infobars']
             }
@@ -32,7 +32,8 @@ exports.config = {
     plugins: [{
             package: require.resolve('protractor-multiple-cucumber-html-reporter-plugin'),
             options: {
-            // read the options part
+                automaticallyGenerateReport: true,
+                openReportInBrowser: true
             }
         }]
 };
