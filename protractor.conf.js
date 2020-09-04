@@ -13,9 +13,9 @@ exports.config = {
     },
     cucumberOpts: {
         tags: "",
-        require: '../steps/*.js'
+        require: 'steps/*.js'
     },
-    specs: ['../features/*.feature'],
+    specs: ['features/*.feature'],
     onPrepare: function () {
         protractor_1.browser.driver.manage().window().maximize();
         protractor_1.browser.manage().timeouts().pageLoadTimeout(35000);

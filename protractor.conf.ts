@@ -12,9 +12,9 @@ export let config:Config={
     },
     cucumberOpts: {
         tags:"",
-        require: '../steps/*.js'},
+        require: 'steps/*.js'},
   
-    specs: ['../features/*.feature'],
+    specs: ['features/*.feature'],
     onPrepare()
     {
         browser.driver.manage().window().maximize();
