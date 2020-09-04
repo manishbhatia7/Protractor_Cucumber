@@ -7,7 +7,8 @@
     "declaration": false,
     "noImplicitAny": false,
     "outDir": "JSFiles",
-    "removeComments": false
+    "removeComments": false,
+    "lib":["ES6"]
   },
   "exclude": [
     "node_modules"
