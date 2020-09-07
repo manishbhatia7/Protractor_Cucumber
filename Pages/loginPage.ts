@@ -1,24 +1,17 @@
-import {browser,by,element} from "protractor";
-var expect = require('chai').expect;
+import { by, ElementFinder, element } from "protractor";
 export class loginPage
 {
-setUserName(uname) {
-    element(by.id('txtUsername')).clear();
-    element(by.id('txtUsername')).sendKeys(uname);
-}
+    public userName:ElementFinder;
+    public password:ElementFinder;
+    public submitBtn:ElementFinder;
+    public dashboard:ElementFinder;
 
-setPassword(pwd) {
-    element(by.id('txtPassword')).clear();
-    element(by.id('txtPassword')).sendKeys(pwd);
-}
-
-clickOnLoginBtn()
-{
-    element(by.id('btnLogin')).click(); 
-}
-assertLogin()
-{
-    //var title=element(by.xpath("//li[contains(text(),'Dashboard')]"));
-    //expect(title.isDisplayed()).to.eventually.equal(true);
-}
+    constructor()
+    {
+        this.userName=element(by.id('txtUsername'));
+        this.password=element(by.id('txtPassword'));
+        this.submitBtn=element(by.id('btnLogin'));
+        this.dashboard=element(by.xpath("//li[contains(text(),'Dashboard')]"));
+    }
+   
 }

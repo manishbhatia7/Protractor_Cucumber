@@ -26,7 +26,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4676000000
+              "duration": 5746000000
             }
           },
           {
@@ -39,7 +39,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3000000
+              "duration": 191000000
             }
           },
           {
@@ -48,11 +48,11 @@
             "line": 7,
             "name": "i enter \"admin123\" in password",
             "match": {
-              "location": "steps\\login.js:66"
+              "location": "steps\\login.js:76"
             },
             "result": {
               "status": "passed",
-              "duration": 5000000
+              "duration": 265000000
             }
           },
           {
@@ -61,11 +61,11 @@
             "line": 8,
             "name": "i click on submit button",
             "match": {
-              "location": "steps\\login.js:78"
+              "location": "steps\\login.js:91"
             },
             "result": {
               "status": "passed",
-              "duration": 6000000
+              "duration": 5114000000
             }
           },
           {
@@ -74,11 +74,11 @@
             "line": 9,
             "name": "login should be successful",
             "match": {
-              "location": "steps\\login.js:90"
+              "location": "steps\\login.js:103"
             },
             "result": {
               "status": "passed",
-              "duration": 1000000
+              "duration": 74000000
             }
           },
           {
@@ -89,7 +89,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2000000
+              "duration": 1000000
             }
           }
         ]

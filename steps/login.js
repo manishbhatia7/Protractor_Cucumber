@@ -59,14 +59,29 @@ cucumber_1.Given('i login in into {string}', function (url) {
     });
 });
 cucumber_1.When('i enter {string} in username', function (username) {
-    login.setUserName(username);
+    return __awaiter(this, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, login.userName.clear()];
+                case 1:
+                    _a.sent();
+                    return [4 /*yield*/, login.userName.sendKeys(username)];
+                case 2:
+                    _a.sent();
+                    return [2 /*return*/];
+            }
+        });
+    });
 });
 cucumber_1.When('i enter {string} in password', function (password) {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, login.setPassword(password)];
+                case 0: return [4 /*yield*/, login.password.clear()];
                 case 1:
+                    _a.sent();
+                    return [4 /*yield*/, login.password.sendKeys(password)];
+                case 2:
                     _a.sent();
                     return [2 /*return*/];
             }
@@ -77,7 +92,7 @@ cucumber_1.When('i click on submit button', function () {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, login.clickOnLoginBtn()];
+                case 0: return [4 /*yield*/, login.submitBtn.click()];
                 case 1:
                     _a.sent();
                     return [2 /*return*/];
@@ -89,7 +104,7 @@ cucumber_1.Then('login should be successful', function () {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, login.assertLogin()];
+                case 0: return [4 /*yield*/, expect(login.dashboard.isDisplayed()).to.eventually.equal(true)];
                 case 1:
                     _a.sent();
                     return [2 /*return*/];
