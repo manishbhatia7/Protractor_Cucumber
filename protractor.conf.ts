@@ -10,8 +10,7 @@ exports.config = {
         require: [
             path.resolve(process.cwd(), 'steps/*.js')
         ],
-        // Tell CucumberJS to save the JSON report
-        format: 'json:.tmp/results.json',
+        format: 'json:.tmp/results.json',     
         strict: true
     },
 
@@ -30,6 +29,14 @@ exports.config = {
     onPrepare()
     {
         browser.driver.manage().window().maximize();
+        const chai = require('chai');
+ const chaiAsPromised = require('chai-as-promised');
+
+ // Load chai-as-promised support
+ chai.use(chaiAsPromised);
+
+ // Initialise should API (attaches as a property on Object)
+ chai.should();
 
     },
     // Here the magic happens
@@ -37,7 +44,7 @@ exports.config = {
         package: require.resolve('protractor-multiple-cucumber-html-reporter-plugin'),
         options:{
             automaticallyGenerateReport:true,
-            openReportInBrowser:true
+            openReportInBrowser:true,            
         }
     }]
 

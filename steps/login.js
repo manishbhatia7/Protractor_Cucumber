@@ -39,6 +39,7 @@ exports.__esModule = true;
 var cucumber_1 = require("cucumber");
 var protractor_1 = require("protractor");
 var setDefaultTimeout = require('cucumber').setDefaultTimeout;
+var expect = require('chai').expect;
 setDefaultTimeout(60 * 1000);
 cucumber_1.Given('i login in into {string}', function (url) {
     return __awaiter(this, void 0, void 0, function () {
@@ -96,4 +97,8 @@ cucumber_1.When('i click on submit button', function () {
             }
         });
     });
+});
+cucumber_1.Then('login should be successful', function () {
+    var title = protractor_1.element(protractor_1.by.xpath("//li[contains(text(),'Dashboard')]"));
+    expect(title.isDisplayed()).to.eventually.equal(true);
 });
