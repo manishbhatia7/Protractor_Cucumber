@@ -38,9 +38,11 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 exports.__esModule = true;
 var cucumber_1 = require("cucumber");
 var protractor_1 = require("protractor");
+var loginPage_1 = require("../Pages/loginPage");
 var setDefaultTimeout = require('cucumber').setDefaultTimeout;
 var expect = require('chai').expect;
 setDefaultTimeout(60 * 1000);
+var login = new loginPage_1.loginPage();
 cucumber_1.Given('i login in into {string}', function (url) {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
@@ -57,29 +59,14 @@ cucumber_1.Given('i login in into {string}', function (url) {
     });
 });
 cucumber_1.When('i enter {string} in username', function (username) {
-    return __awaiter(this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, protractor_1.element(protractor_1.by.id('txtUsername')).clear()];
-                case 1:
-                    _a.sent();
-                    return [4 /*yield*/, protractor_1.element(protractor_1.by.id('txtUsername')).sendKeys(username)];
-                case 2:
-                    _a.sent();
-                    return [2 /*return*/];
-            }
-        });
-    });
+    login.setUserName(username);
 });
 cucumber_1.When('i enter {string} in password', function (password) {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, protractor_1.element(protractor_1.by.id('txtPassword')).clear()];
+                case 0: return [4 /*yield*/, login.setPassword(password)];
                 case 1:
-                    _a.sent();
-                    return [4 /*yield*/, protractor_1.element(protractor_1.by.id('txtPassword')).sendKeys(password)];
-                case 2:
                     _a.sent();
                     return [2 /*return*/];
             }
@@ -90,7 +77,7 @@ cucumber_1.When('i click on submit button', function () {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, protractor_1.element(protractor_1.by.id('btnLogin')).click()];
+                case 0: return [4 /*yield*/, login.clickOnLoginBtn()];
                 case 1:
                     _a.sent();
                     return [2 /*return*/];
@@ -99,6 +86,14 @@ cucumber_1.When('i click on submit button', function () {
     });
 });
 cucumber_1.Then('login should be successful', function () {
-    var title = protractor_1.element(protractor_1.by.xpath("//li[contains(text(),'Dashboard')]"));
-    expect(title.isDisplayed()).to.eventually.equal(true);
+    return __awaiter(this, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, login.assertLogin()];
+                case 1:
+                    _a.sent();
+                    return [2 /*return*/];
+            }
+        });
+    });
 });
