@@ -10,3 +10,10 @@ Feature: Login
    Examples:
        | username | password |
        | admin  | admin123  |
+
+
+  Scenario: Add an employee
+    When i click on dashboard links to reach add employee page
+    And on reaching Employee list page
+    When I click on add employee link
+    Then add employee page should open     
