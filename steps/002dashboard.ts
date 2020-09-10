@@ -19,7 +19,7 @@ When('i click on dashboard links to reach add employee page', async function ()
   });
 
 When('I click on add employee link', async function () {
-await dash.addEmployeeButton.click();
+    await dash.addEmployeeButton.click();
             
 });
 

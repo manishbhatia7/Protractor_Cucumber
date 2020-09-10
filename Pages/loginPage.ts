@@ -12,6 +12,7 @@ export class loginPage
         this.password=element(by.id('txtPassword'));
         this.submitBtn=element(by.id('btnLogin'));
         this.dashboard=element(by.xpath("//li[contains(text(),'Dashboard')]"));
+        
     }
    
 }
